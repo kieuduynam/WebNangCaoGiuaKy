@@ -1,6 +1,10 @@
-
 <?php
-// Chuyển hướng người dùng đến trang Login
-header("Location: controller/loginController.php");
-exit;
+session_start();
+if(!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit;
+} else {
+    header("Location: sach.php");
+    exit;
+}
 ?>
